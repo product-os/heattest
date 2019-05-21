@@ -18,6 +18,7 @@ app = Flask(__name__)
 root_dir = '/data'
 AutoIndex(app, browse_root=root_dir)
 
+@app.route('/plot/')
 @app.route('/plot')
 def plot():
     onlyfiles = [f for f in listdir(root_dir) if isfile(join(root_dir, f)) and fnmatch.fnmatch(f, '*.csv')]

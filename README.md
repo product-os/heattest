@@ -1,6 +1,6 @@
 # HeatTest
 
-Raspberry Pi family heating test (
+Raspberry Pi family heating test.
 
 To start running a test, set an environment variable called `RUN` (either device or service
 variable for the `main service`). Then the application starts the data recording and shows
