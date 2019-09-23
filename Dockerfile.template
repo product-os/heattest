@@ -3,7 +3,7 @@ FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:stretch
 WORKDIR /app
 
 RUN install_packages \
-      wget omxplayer stress \
+      wget stress \
       python3 python3-matplotlib python3-pip python3-setuptools python3-tk
 
 COPY requirements.txt ./
