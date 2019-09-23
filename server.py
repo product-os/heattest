@@ -75,6 +75,7 @@ def create_figure(filename):
     axis2.plot(x, z)
     axis2.set_xlabel('Time (s)')
     axis2.set_ylabel('Core Frequency (MHz)')
+    axis2.set_ylim([0, max(z)*1.05])
     return fig
 
 if __name__ == '__main__':
