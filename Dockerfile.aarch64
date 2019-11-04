@@ -1,11 +1,10 @@
-# Use Raspberry Pi3 (32-bit) base imageses for the 64-bit ARM devices
-FROM balenalib/raspberrypi3-debian:stretch
+FROM balenalib/aarch64-debian:buster
 
 WORKDIR /app
 
 RUN install_packages \
-      wget omxplayer stress \
-      python3 python3-matplotlib python3-pip python3-setuptools python3-tk
+      stress \
+      python3 python3-matplotlib python3-pip python3-setuptools python3-tk bc
 
 COPY requirements.txt ./
 RUN pip3 install -r requirements.txt
