@@ -11,7 +11,7 @@ if [ -n "${RUN}" ]; then
    bash internaltemp.sh > "${filename}" &
    sleep "${DELAY:-30}"
    echo "Starting stress --cpu 8":
-   stress --cpu 8 &
+   stress-ng --cpu 8 &
    tail -f "${filename}"
 else
     echo "Set the env var RUN to some value to run the test."
