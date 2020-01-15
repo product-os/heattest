@@ -1,0 +1,11 @@
+FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:stretch
+
+WORKDIR /app
+
+RUN install_packages stress python3 python3-matplotlib python3-pip python3-setuptools python3-tk
+
+RUN pip3 install stressberry
+
+COPY *.sh ./
+
+CMD ["bash", "start.sh"]
