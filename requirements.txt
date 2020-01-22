@@ -1,4 +1,0 @@
-Flask
-flask_autoindex
-matplotlib
-numpy
