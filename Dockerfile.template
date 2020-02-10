@@ -1,11 +1,21 @@
-FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:stretch
+FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:buster
 
 WORKDIR /app
 
-RUN install_packages stress python3 python3-matplotlib python3-pip python3-setuptools python3-tk
+RUN install_packages stress python3 python3-matplotlib python3-pip python3-setuptools python3-tk unzip
 
-RUN pip3 install stressberry
+RUN pip3 install pytest allure-python-commons allure-pytest Adafruit_DHT
+
+COPY stressberry-master.zip ./
+RUN unzip stressberry-master.zip
+RUN cd stressberry-master/ && python3 setup.py install
 
 COPY *.sh ./
 
-CMD ["bash", "start.sh"]
+CMD ["./start.sh"]
+
+# COPY test test/
+
+# CMD ["python3","test/test_stressberry_standard.py"]
+# CMD ["pytest","--allure-dir","results"]
+# CMD ["pytest"]
