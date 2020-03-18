@@ -11,10 +11,11 @@ RUN unzip stressberry-master.zip
 RUN cd stressberry-master/ && python3 setup.py install
 
 COPY *.sh ./
+COPY test test/
 
 CMD ["./start.sh"]
 
-# COPY test test/
+
 
 # CMD ["python3","test/test_stressberry_standard.py"]
 # CMD ["pytest","--allure-dir","results"]
