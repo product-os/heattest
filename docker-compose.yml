@@ -1,0 +1,18 @@
+version: '2'
+services:
+  heat-testing:
+    build: ./heat-testing
+    privileged: true
+    expose:
+      - "80"
+    devices:
+      - "/dev/mem:/dev/mem"
+    cap_add:
+      - SYS_RAWIO
+
+  test-chamber:
+    build: ./test-chamber
+    devices:
+      - "/dev/mem:/dev/mem"
+    cap_add:
+      - SYS_RAWIO

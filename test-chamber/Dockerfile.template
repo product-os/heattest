@@ -1,0 +1,11 @@
+FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:buster
+
+WORKDIR /app2
+
+RUN install_packages stress python3 python3-pip python3-setuptools unzip
+RUN pip3 install adafruit_blinka
+
+COPY *.py ./
+COPY *.sh ./
+
+CMD ["./start.sh"]

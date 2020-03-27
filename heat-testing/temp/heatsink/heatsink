@@ -1,0 +1,6 @@
+  /home/anujdeshpande/balena/heatsink/heattest/temp/heatsink:
+  total used in directory 16 available 31323664
+  drwxr-xr-x 3 anujdeshpande anujdeshpande 4096 Jan 31 00:58 .
+  drwxr-xr-x 5 anujdeshpande anujdeshpande 4096 Jan 31 00:59 ..
+  drwxr-xr-x 2 anujdeshpande anujdeshpande 4096 Jan 31 00:58 __pycache__
+  -rw-r--r-- 1 anujdeshpande anujdeshpande  255 Jan 31 00:58 test_heatsink.py
