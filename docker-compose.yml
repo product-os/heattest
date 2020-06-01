@@ -3,8 +3,8 @@ services:
   heat-testing:
     build: ./heat-testing
     privileged: true
-    expose:
-      - "80"
+    ports:
+      - 80:80
     devices:
       - "/dev/mem:/dev/mem"
     cap_add:
@@ -16,3 +16,5 @@ services:
       - "/dev/mem:/dev/mem"
     cap_add:
       - SYS_RAWIO
+    ports:
+      - 8081:8081
