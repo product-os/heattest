@@ -1,17 +1,25 @@
-FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:buster
+FROM balenalib/raspberrypi3-ubuntu
 
 WORKDIR /app
 
+# For stressberry
 RUN install_packages stress python3 python3-matplotlib python3-pip python3-setuptools python3-tk unzip
+# For oscilloscope
+RUN install_packages python-minimal python-pip python-pil python-setuptools
 
-RUN pip3 install pytest allure-python-commons allure-pytest Adafruit_DHT stressberry
+# RUN pip3 install pytest allure-python-commons allure-pytest Adafruit_DHT # stressberry
 
-# COPY stressberry-master.zip ./
-# RUN unzip stressberry-master.zip
-# RUN cd stressberry-master/ && python3 setup.py install
+COPY stressberry.zip ./
+RUN unzip stressberry.zip
+RUN mkdir user-tmp/
+# WORKDIR ./stressberry
+RUN export TMPDIR="user-tmp/"
+RUN pip3 install ./stressberry/
 
 COPY *.sh ./
-COPY test test/
+# COPY test test/
+COPY DS1054Z_screen_capture.zip ./
+RUN unzip DS1054Z_screen_capture.zip
 
 CMD ["./start.sh"]
 

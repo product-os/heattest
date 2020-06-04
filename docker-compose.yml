@@ -9,12 +9,3 @@ services:
       - "/dev/mem:/dev/mem"
     cap_add:
       - SYS_RAWIO
-
-  test-chamber:
-    build: ./test-chamber
-    devices:
-      - "/dev/mem:/dev/mem"
-    cap_add:
-      - SYS_RAWIO
-    ports:
-      - 8081:8081
