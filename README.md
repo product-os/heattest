@@ -5,12 +5,11 @@ This is the app used for heat testing in the environmental chamber at ARAI.
 ## Hardware
 
 - Rigol DS1054
+- Serial cable
 - Fins
   - Fin 1.0
   - Fin 1.1
-  - Fin 1.1 with following modifications
-    - Remove L20
-	- TODO
+  - Fin 1.1 with modifications as per spec doc linked below
 - Environment chamber with the following make - TODO
 
 ## Software

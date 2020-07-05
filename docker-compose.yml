@@ -1,7 +1,7 @@
 version: '2'
 services:
-  heat-testing:
-    build: ./heat-testing
+  temp-measure:
+    build: ./temp-measure
     privileged: true
     ports:
       - 80:80
