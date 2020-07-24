@@ -8,7 +8,7 @@ RUN install_packages build-essential libgpiod2 libusb-dev
 
 # For python packages
 RUN pip3 install --upgrade setuptools
-RUN pip install RPi.GPIO adafruit-blinka adafruit-circuitpython-dht gpiozero pyusb
+RUN pip3 install RPi.GPIO adafruit-blinka adafruit-circuitpython-dht gpiozero pyusb table-logger
 
 COPY *.sh ./
 COPY *.py ./
