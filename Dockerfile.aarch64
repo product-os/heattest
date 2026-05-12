@@ -1,5 +1,5 @@
 # Use Raspberry Pi3 (32-bit) base imageses for the 64-bit ARM devices
-FROM balenalib/raspberrypi3-debian:stretch
+FROM balenalib/raspberrypi3-debian:stretch@sha256:f340aa0ff79edb97984f911d7a7479831cbca166a14c4c4601a66366d02907e7
 
 WORKDIR /app
 
